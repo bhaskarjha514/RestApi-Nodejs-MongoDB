@@ -7,8 +7,13 @@ router.get('/',(req, res, next) => {
     });
 });
 router.get('/:productId',(req, res, next) => {
+    const product = {
+        name: req.body.name,
+        price: req.body.price
+    };
     res.status(200).json({
-        message:"Get product details" 
+        message:"Get product details",
+        createdProduct: product 
     });
 });
 router.post('/',(req, res, next) => {
